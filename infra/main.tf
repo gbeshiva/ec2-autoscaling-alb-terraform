@@ -1,4 +1,3 @@
-
 provider "aws" {
   region = var.region
 }
@@ -23,7 +22,8 @@ resource "aws_autoscaling_group" "web_asg" {
   desired_capacity     = var.desire_count
   max_size             = var.max_count
   min_size             = var.min_count
-  vpc_zone_identifier  = var.subnet_ids
+ # vpc_zone_identifier  = var.subnet_ids
+  availability_zones  = var.availability_zones
   launch_template {
     id      = aws_launch_template.web_app.id
     version = "$Latest"
