@@ -7,7 +7,7 @@ variable "region" {
   variable "ami_id" {
   description = "The subnet ID to launch the EC2 instance in"
   type        = string
-    default = "ami-084568db4383264d4" 
+    default = "ami-0f535a71b34f2d44a" 
 }
 variable "instance_type" {
   description = "The type of EC2 instance to create"
@@ -51,4 +51,9 @@ variable "vpc_id" {
   description = "default vpc id"
   type        = string
   default     = "vpc-0a31b3ff4ffc4c104"
+}
+variable "availability_zones" {
+  description = "availability zones"
+  type        = list(string)
+  default = ["ap-south-1a", "ap-south-1b"]
 }
